@@ -1,0 +1,83 @@
+@import "mixin";
+
+#form {
+  @include flex();
+  height: 400px;
+  width: 600px;
+  margin: $center-margin;
+  box-shadow: $box-shadow-form;
+
+  .descriptionView {
+    width: 100%;
+
+    .iconSection {
+      margin: $center-margin;
+      width: 150px;
+      height: 150px;
+      background: url('reactjs_logo.png') center no-repeat;
+      background-size: cover;
+
+      &.spinTransition {
+        -webkit-animation: rotation 5s infinite linear;
+      }
+    }
+
+    .messageSection {
+      @include ellipses();
+      color: $font-color;
+      width: calc(100% - 50px);
+      margin: $center-margin;
+
+      &.font-family {
+        font-size: $font-size-title;
+        font-family: $font-stack;
+      }
+    }
+  }
+
+  .operationsView {
+    @include flex();
+
+    .messageInputBox {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: content-box;
+      font-family: $font-stack;
+      box-shadow: $box-shadow-hover;
+
+      &::placeholder {
+        text-align: center;
+        font-family: $font-stack;
+        font-size: $font-size-content;
+      }
+
+      &:hover {
+        box-shadow: $box-shadow-normal;
+      }
+    }
+
+    .spinTransitionButton {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: content-box;
+      font-family: $font-stack;
+      box-shadow: $box-shadow-hover;
+      background: transparent;
+      color: white;
+      font-size: $font-size-content;
+      cursor: pointer;
+
+      &:hover {
+        box-shadow: $box-shadow-normal;
+      }
+    }
+  }
+}
